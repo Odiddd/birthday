@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronDown, Mail, MapPin, Code, Palette } from 'lucide-react';
+import { ChevronDown, MapPin, Code } from 'lucide-react';
 
 interface PortfolioHeroProps {
   name?: string;
@@ -9,11 +9,6 @@ interface PortfolioHeroProps {
   location?: string;
   description?: string;
   skills?: string[];
-  socialLinks?: {
-    github?: string;
-    linkedin?: string;
-    email?: string;
-  };
 }
 
 const PortfolioHero: React.FC<PortfolioHeroProps> = ({
@@ -21,12 +16,7 @@ const PortfolioHero: React.FC<PortfolioHeroProps> = ({
   title = "Princess Singosari",
   location = "Singosari, Indonesia",
   description = "Evanda Cahya Lailia, wanita sempurna yang menjadi pasanganku untuk selamanya. ",
-  skills = ["Sayangku", "Cintaku", "Cantikku", "My Future"],
-  socialLinks = {
-    github: "#",
-    linkedin: "#",
-    email: "dido@gmail.com"
-  }
+  skills = ["Sayangku", "Cintaku", "Cantikku", "My Future"]
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentSkill, setCurrentSkill] = useState(0);
@@ -98,47 +88,6 @@ const PortfolioHero: React.FC<PortfolioHeroProps> = ({
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12 leading-relaxed">
             {description}
           </p>
-
-          {/* Social Links */}
-          {/* <div className="flex justify-center space-x-6 mb-12">
-            {socialLinks.github && (
-              <a 
-                href={socialLinks.github}
-                className="group p-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
-              >
-                <Github className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors" />
-              </a>
-            )}
-            {socialLinks.linkedin && (
-              <a 
-                href={socialLinks.linkedin}
-                className="group p-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
-              >
-                <Linkedin className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors" />
-              </a>
-            )}
-            {socialLinks.email && (
-              <a 
-                href={socialLinks.email}
-                className="group p-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:scale-110"
-              >
-                <Mail className="w-6 h-6 text-gray-300 group-hover:text-white transition-colors" />
-              </a>
-            )}
-          </div> */}
-
-          {/* CTA Buttons */}
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/25">
-              <span className="flex items-center">
-                <Palette className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                View My Work
-              </span>
-            </button>
-            <button className="px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-sm">
-              Download CV
-            </button>
-          </div> */}
         </div>
 
         {/* Scroll Indicator */}
@@ -148,7 +97,6 @@ const PortfolioHero: React.FC<PortfolioHeroProps> = ({
             className="group p-2 text-white/60 hover:text-white transition-colors duration-300"
           >
             <div className="flex flex-col items-center">
-              {/* <span className="text-sm mb-2 opacity-80">Scroll to explore</span> */}
               <ChevronDown className="w-6 h-6 animate-bounce group-hover:animate-pulse" />
             </div>
           </button>

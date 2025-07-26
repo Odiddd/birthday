@@ -110,7 +110,7 @@ export default function SkillsSection() {
             transition={{ duration: 0.8 }}
           >
             <h3 className="text-3xl font-bold text-white mb-8">
-              It's You
+              It&apos;s You
             </h3>
             <div className="grid grid-cols-2 gap-4 mb-12">
               {tools.map((tool, index) => (
