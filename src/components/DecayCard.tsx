@@ -81,30 +81,33 @@ const DecayCard: React.FC<DecayCardProps> = ({
     };
 
     const render = () => {
-      let targetX = lerp(
+      const targetX = lerp(
         imgValues.imgTransforms.x,
         map(cursor.current.x, 0, winsize.current.width, -120, 120),
         0.1
       );
-      let targetY = lerp(
+      const targetY = lerp(
         imgValues.imgTransforms.y,
         map(cursor.current.y, 0, winsize.current.height, -120, 120),
         0.1
       );
-      let targetRz = lerp(
+      const targetRz = lerp(
         imgValues.imgTransforms.rz,
         map(cursor.current.x, 0, winsize.current.width, -10, 10),
         0.1
       );
 
       const bound = 50;
-      if (targetX > bound) targetX = bound + (targetX - bound) * 0.2;
-      if (targetX < -bound) targetX = -bound + (targetX + bound) * 0.2;
-      if (targetY > bound) targetY = bound + (targetY - bound) * 0.2;
-      if (targetY < -bound) targetY = -bound + (targetY + bound) * 0.2;
+      let finalX = targetX;
+      let finalY = targetY;
 
-      imgValues.imgTransforms.x = targetX;
-      imgValues.imgTransforms.y = targetY;
+      if (finalX > bound) finalX = bound + (finalX - bound) * 0.2;
+      if (finalX < -bound) finalX = -bound + (finalX + bound) * 0.2;
+      if (finalY > bound) finalY = bound + (finalY - bound) * 0.2;
+      if (finalY < -bound) finalY = -bound + (finalY + bound) * 0.2;
+
+      imgValues.imgTransforms.x = finalX;
+      imgValues.imgTransforms.y = finalY;
       imgValues.imgTransforms.rz = targetRz;
 
       if (svgRef.current) {

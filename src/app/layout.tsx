@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 // import LiquidBG from "@/components/LiquidBG"
 // import Cursor from "@/components/cursor"
-import Cursor from "@/components/Cursor"
+// import Cursor from "@/components/Cursor"
 import Aurora from "@/components/Aurora"
 
 export const metadata: Metadata = {
@@ -21,7 +21,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           amplitude={1.0}
           speed={0.5}
         />
-        <Cursor/>
         {children}       {/* Semua konten tetap di atas */}
       </body>
     </html>
